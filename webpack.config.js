@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/index.js',
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, "build"),
@@ -15,7 +15,7 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.jsx?$/, loader: "babel-loader" },
+      { test: /\.js(x)?$/, loader: "babel-loader" },
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
     ]
   },
