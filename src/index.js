@@ -3,11 +3,11 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { routerReducer } from 'react-router-redux';
 
-import { reduce } from 'domain/store/reducer';
+import reducer from 'domain/store/reducer';
 import RootRouter from 'router'
 
 const reducers = {
-    app: reduce,
+    app: reducer,
     routing: routerReducer,
 }
 
