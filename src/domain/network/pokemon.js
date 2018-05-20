@@ -19,7 +19,6 @@ export async function getPokemonList() {
   
 export async function getPokemonDetailByName(name) {
     logger.debug('Requesting from network', '- element -', name);
-    updateLoading(true);
     const resp = await fetch(`${URL_DETAIL}${name}`);
     if (resp.ok) {
         return resp.json();

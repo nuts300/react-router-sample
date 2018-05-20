@@ -5,7 +5,7 @@ import pokemonDetailReducer from 'domain/store/reducer/pokemon_detail';
 
 const reducer = combineReducers({
     pokemonList: pokemonListReducer,
-    pokeonDetail: pokemonDetailReducer
+    pokemonDetail: pokemonDetailReducer
 });
 
 export default reducer;
