@@ -1,31 +1,33 @@
+import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+
 import { getLogger } from 'logger';
 import { getPokemonList, getPokemonDetailByName } from 'domain/network/pokemon';
 import { updatePokemonListAction, updatePokemonDetailAction, updatePokemonListFetchingAction, updatePokemonDetailFetchingAction } from 'domain/actions';
 
 const logger = getLogger('domain/middleware/network/pokemon');
 
-export async function updatePokemonList() {
+export function* updatePokemonList() {
     logger.debug('List from network');
-    updatePokemonListFetchingAction(true);
+    yield put(updatePokemonListFetchingAction(true));
     try {
-        const list = await getPokemonList();
-        updatePokemonListAction(list);
-        updatePokemonListFetchingAction(false);
+        const list = yield call(getPokemonList);
+        yield put(updatePokemonListAction(list));
+        yield put(updatePokemonListFetchingAction(false));
     } catch (error) {
         logger.error('Fetch updatePokemonList failure.', error);
-        updatePokemonListFetchingAction(false);
+        yield put(updatePokemonListFetchingAction(false));
     }
 }
 
-export async function updatePokemonDetail(name) {
+export function* updatePokemonDetail(action) {
     logger.debug('Detail from network');
-    updatePokemonDetailFetchingAction(true);
+    yield put(updatePokemonDetailFetchingAction(true));
     try {
-        const pokemon = await getPokemonDetailByName(name);
-        updatePokemonDetailAction(pokemon);
-        updatePokemonDetailFetchingAction(false);
+        const pokemon = yield call(getPokemonDetailByName, action.name);
+        yield put(updatePokemonDetailAction(pokemon));
+        yield put(updatePokemonDetailFetchingAction(false));
     } catch (error) {
         logger.error('Fetch updatePokemonDetail failure.', error);
-        updatePokemonDetailFetchingAction(false);
+        yield put(updatePokemonDetailFetchingAction(false));
     }
 }

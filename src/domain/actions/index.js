@@ -4,33 +4,48 @@ export const ACTIONS = {
     UPDATE_POKEMON_LIST: 'UPDATE_POKEMON_LIST',
     UPDATE_POKEMON_DETAIL: 'UPDATE_POKEMON_DETAIL',
     UPDATE_POKEMON_LIST_FETCHING: 'UPDATE_POKEMON_LIST_FETCHING',
-    UPDATE_POKEMON_DETAIL_FETCHING: 'UPDATE_POKEMON_DETAIL_FETCHING'
+    UPDATE_POKEMON_DETAIL_FETCHING: 'UPDATE_POKEMON_DETAIL_FETCHING',
+    UPDATE_POKEMON_LIST_PROCESS: 'UPDATE_POKEMON_LIST_PROCESS',
+    UPDATE_POKEMON_DETAIL_PROCESS: 'UPDATE_POKEMON_DETAIL_PROCESS'
 }
 
 export function updatePokemonListAction(list) {
-    dispatch({
+    return {
         type: ACTIONS.UPDATE_POKEMON_LIST,
         list: list
-    });
+    };
 }
 
 export function updatePokemonDetailAction(pokemon) {
-    dispatch({
+    return {
         type: ACTIONS.UPDATE_POKEMON_DETAIL,
         pokemon: pokemon
-    });
+    };
 }
 
 export function updatePokemonListFetchingAction(isFetching) {
-    dispatch({
+    return {
         type: ACTIONS.UPDATE_POKEMON_LIST_FETCHING,
         isFetching
-    })
+    };
 }
 
 export function updatePokemonDetailFetchingAction(isFetching) {
-    dispatch({
+    return {
         type: ACTIONS.UPDATE_POKEMON_DETAIL_FETCHING,
         isFetching
-    })
+    };
+}
+
+export function dispatchUpdatePokemonList() {
+    dispatch({
+        type: ACTIONS.UPDATE_POKEMON_LIST_PROCESS
+    });
+}
+
+export function dispatchUpdatePokemonDetail(name) {
+    dispatch({
+        type: ACTIONS.UPDATE_POKEMON_DETAIL_PROCESS,
+        name
+    });
 }

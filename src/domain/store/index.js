@@ -2,10 +2,10 @@ import { createStore, combineReducers } from 'redux';
 
 let store;
 
-export function initStore(reducers) {
+export function initStore(reducers, middleware) {
     store = createStore(
         combineReducers(reducers),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        middleware
     );
     return store;
 }

@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom'
 import { Provider, connect } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-
 import App from 'components/container/App';
 import Dashboard from 'components/container/Dashboard';
 import Login from 'components/container/Login';
 import PokemonList from 'components/container/PokemonList';
 import PokemonDetail from 'components/container/PokemonDetail';
 
-import { updatePokemonList, updatePokemonDetail } from 'domain/middleware/network/pokemon';
+import { dispatchUpdatePokemonList, dispatchUpdatePokemonDetail } from 'domain/actions';
 
 let history;
 
@@ -30,8 +29,8 @@ export default function RootRouter(store) {
         <Route path="/" component={App}>
           <Route path="dashboard" component={Dashboard}/>
           <Route path="login" component={Login}/>
-          <Route path="pokemonlist" component={PokemonList} onEnter={updatePokemonList} />
-          <Route path="pokemondetail/:name" component={PokemonDetail} onEnter={(nextState) => updatePokemonDetail(nextState.params.name)} />
+          <Route path="pokemonlist" component={PokemonList} onEnter={dispatchUpdatePokemonList} />
+          <Route path="pokemondetail/:name" component={PokemonDetail} onEnter={(nextState) => dispatchUpdatePokemonDetail(nextState.params.name)} />
         </Route>
       </Router>
     </Provider>
