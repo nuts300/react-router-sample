@@ -9,7 +9,7 @@ import Login from 'components/container/Login';
 import PokemonList from 'components/container/PokemonList';
 import PokemonDetail from 'components/container/PokemonDetail';
 
-import { dispatchUpdatePokemonList, dispatchUpdatePokemonDetail } from 'domain/actions';
+import { dispatchUpdatePokemonList, dispatchUpdatePokemonDetail } from 'domain/middleware/dispatcher/pokemon';
 
 let history;
 

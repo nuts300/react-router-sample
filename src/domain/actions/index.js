@@ -1,4 +1,3 @@
-import { dispatch } from 'domain/store';
 
 export const ACTIONS = {
     UPDATE_POKEMON_LIST: 'UPDATE_POKEMON_LIST',
@@ -37,15 +36,3 @@ export function updatePokemonDetailFetchingAction(isFetching) {
     };
 }
 
-export function dispatchUpdatePokemonList() {
-    dispatch({
-        type: ACTIONS.UPDATE_POKEMON_LIST_PROCESS
-    });
-}
-
-export function dispatchUpdatePokemonDetail(name) {
-    dispatch({
-        type: ACTIONS.UPDATE_POKEMON_DETAIL_PROCESS,
-        name
-    });
-}

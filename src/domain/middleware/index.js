@@ -1,5 +1,5 @@
 import { ACTIONS } from 'domain/actions';
-import { updatePokemonList, updatePokemonDetail } from 'domain/middleware/network/pokemon';
+import { updatePokemonList, updatePokemonDetail } from 'domain/middleware/effects/pokemon';
 import { all, takeLatest } from 'redux-saga/effects';
 
 export default function* rootSaga() {
