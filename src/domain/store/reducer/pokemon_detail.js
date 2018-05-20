@@ -4,11 +4,11 @@ import { initialPokemonDetailState } from 'domain/store/state/pokemon_detail';
 import { ACTIONS } from 'domain/actions';
 
 function updatePokemonDetail(state, pokemon) {
-    return Immutable.fromJS(state).set('pokemon', pokemon).toJS();
+    return state.set('pokemon', pokemon);
 }
 
 function updatePokemonDetailFetching(state, isFetching) {
-    return Immutable.fromJS(state).set('fetching', isFetching).toJS();
+    return state.set('fetching', isFetching);
 }
 
 export default function pokemonDetailReducer(state = initialPokemonDetailState, action) {

@@ -1,8 +1,9 @@
 import { initialPokemonListState } from 'domain/store/state/pokemon_list';
-import { initialPokemonDetailState } from 'domain/store/state/pokemon_detail';
+import { initialPokemonDetailState, Map } from 'domain/store/state/pokemon_detail';
+import { fromJS } from 'immutable';
 
 
-export const initialState =  {
-    pokemonList: initialPokemonList,
-    pokemonDetail: initialPokemonDetail
-}
+export const initialAppState = {
+    pokemonList: fromJS(initialPokemonListState),
+    pokemonDetail: fromJS(initialPokemonDetailState)
+};

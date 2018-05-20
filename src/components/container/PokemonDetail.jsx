@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import toJS from 'components/utils/to_js'
 
-function PokemonDetail({ app }) {
-    const pokemon = app.pokemonDetail.pokemon;
-    const fetching = app.pokemonDetail.fetching;
-    console.log('pokemon', pokemon);
-    console.log('isFetching', fetching);
+function PokemonDetail({ pokemonDetail }) {
+    const pokemon = pokemonDetail.pokemon;
+    const fetching = pokemonDetail.fetching;
     return (
     <div>
         <h2>Pokemon Detail!!!</h2>
@@ -49,7 +48,7 @@ function PokemonDetail({ app }) {
 
 function mapState(state) {
     return {
-      app: state.app,
+      ...state.app,
     };
 }
 function mapDispatch(dispatch) {
@@ -58,4 +57,4 @@ function mapDispatch(dispatch) {
     };
 };
 
-export default connect(mapState, mapDispatch)(PokemonDetail);
+export default connect(mapState, mapDispatch)(toJS(PokemonDetail));

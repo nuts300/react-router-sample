@@ -4,11 +4,11 @@ import { initialPokemonListState } from 'domain/store/state/pokemon_list';
 import { ACTIONS } from 'domain/actions';
 
 function updatePokemonList(state, list) {
-    return Immutable.fromJS(state).set('list', list).toJS();
+    return state.set('list', list);
 }
 
 function updatePokemonListFetching(state, isFetching) {
-    return Immutable.fromJS(state).set('fetching', isFetching).toJS();
+    return state.set('fetching', isFetching);
 }
 
 export default function pokemonListReducer(state = initialPokemonListState, action) {

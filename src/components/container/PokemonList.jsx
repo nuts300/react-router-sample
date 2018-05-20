@@ -1,21 +1,22 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
+import toJS from 'components/utils/to_js'
 import TableList from 'components/presentational/TableList';
 import PokemonItem from 'components/presentational/PokemonItem';
 
-function PokemonList({ app }) {
+function PokemonList({ pokemonList }) {
     return (
     <div>
         <h2>Pokemon List!!!</h2>
-        <TableList list={app.pokemonList.list} Item={PokemonItem} />
+        <TableList list={pokemonList.list} Item={PokemonItem} />
     </div>
     );
 }
 
 function mapState(state) {
     return {
-      app: state.app,
+      ...state.app,
     };
 }
 function mapDispatch(dispatch) {
@@ -24,4 +25,4 @@ function mapDispatch(dispatch) {
     };
 };
 
-export default connect(mapState, mapDispatch)(PokemonList);
+export default connect(mapState, mapDispatch)(toJS(PokemonList));

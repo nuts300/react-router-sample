@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import toJS from 'components/utils/to_js'
 
 function App({ children }) {
     return(
@@ -19,7 +20,7 @@ function App({ children }) {
 
 function mapState(state) {
     return {
-      app: state.app,
+      ...state.app
     };
 }
 function mapDispatch(dispatch) {
@@ -28,5 +29,5 @@ function mapDispatch(dispatch) {
     };
 };
 
-export default connect(mapState, mapDispatch)(App);
+export default connect(mapState, mapDispatch)(toJS(App));
 

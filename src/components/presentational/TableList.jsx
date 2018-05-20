@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default function List({ Item, list }) {
+export default function TableList({ Item, list }) {
     const contents = list.map((v, index) => <Item key={index} {...v} />);
     return (
     <table className='table'>
