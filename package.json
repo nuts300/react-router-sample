@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base build --hot --inline"
+    "start": "webpack-dev-server --content-base build --hot --inline",
+    "flow": "flow"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -15,6 +16,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.9.1",
+    "flow-bin": "^0.72.0",
+    "flow-status-webpack-plugin": "^0.1.7",
+    "flowtype": "^2.0.0",
     "jsxobj": "^1.1.0",
     "react-hot-loader": "^4.2.0",
     "react-proxy-loader": "^0.3.5",

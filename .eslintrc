@@ -1,0 +1,17 @@
+{
+    "plugins": [
+        "react"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+       "no-set-state": "off"
+    },
+    "overrides": [
+        {
+            "files": [ "src/*.js" ]
+        }
+    ]
+}
