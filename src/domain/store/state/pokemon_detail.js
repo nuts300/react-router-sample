@@ -27,16 +27,15 @@ const Pokemon = Record<DetailItemProps>({
     frontDefault: ''
   }
 });
-const initialDetailItem = new Pokemon();
 
 export type PokemonDetailProps = {
   fetching: boolean,
   pokemon:  Pokemon
 };
 
-const PokemonDetail = Record<PokemonDetailProps>({
+export const PokemonDetail = Record<PokemonDetailProps>({
   fetching: false,
-  pokemon: initialDetailItem
+  pokemon: new Pokemon()
 });
 
 export const initialPokemonDetailState = new PokemonDetail();
