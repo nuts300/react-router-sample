@@ -1,5 +1,5 @@
 // @flow
-
+import {} from 'domain/store/state';
 
 export const UPDATE_POKEMON_LIST = 'UPDATE_POKEMON_LIST';
 export const UPDATE_POKEMON_DETAIL = 'UPDATE_POKEMON_DETAIL';
