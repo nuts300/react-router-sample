@@ -1,3 +1,4 @@
+// @flow
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 
 import { getLogger } from 'logger';
