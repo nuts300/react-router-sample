@@ -9,7 +9,7 @@ export const UPDATE_POKEMON_LIST_PROCESS = 'UPDATE_POKEMON_LIST_PROCESS';
 export const UPDATE_POKEMON_DETAIL_PROCESS = 'UPDATE_POKEMON_DETAIL_PROCESS';
 
 type UpdatePokemonListAction = {
-    type: typeof ACTIONTYPES.UPDATE_POKEMON_LIST,
+    type: typeof UPDATE_POKEMON_LIST,
     list: any
 };
 

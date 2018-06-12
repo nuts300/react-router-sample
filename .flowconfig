@@ -1,12 +1,18 @@
 [ignore]
-.*/node_modules/*
 ./build/*
+./node_modules/*
 
 [include]
 
 [libs]
-./src
 
 [options]
+esproposal.decorators=ignore
 esproposal.class_instance_fields=enable
 esproposal.class_static_fields=enable
+
+module.name_mapper='^domain\/\(.*\)$' -> '<PROJECT_ROOT>/src/domain/\1'
+module.name_mapper='^components\/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^router\/\(.*\)$' -> '<PROJECT_ROOT>/src/router/\1'
+module.name_mapper='^logger(.\js)?$' -> '<PROJECT_ROOT>/src/logger.js'
+module.name_mapper='^index(.\js)?$' -> '<PROJECT_ROOT>/src/index.js'

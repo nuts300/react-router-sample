@@ -1,7 +1,7 @@
 // @flow
 
 import { initialPokemonListState } from 'domain/store/state/pokemon_list';
-import { initialPokemonDetailState, Map } from 'domain/store/state/pokemon_detail';
+import { initialPokemonDetailState } from 'domain/store/state/pokemon_detail';
 import { fromJS } from 'immutable';
 
 export type HomePage = { name: 'HOME_PAGE' };

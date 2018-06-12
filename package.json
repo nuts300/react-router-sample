@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -18,6 +19,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-flowtype": "^2.49.3",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react": "^7.9.1",
     "flow-bin": "^0.72.0",
@@ -31,7 +33,7 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
-    "immutable": "^3.8.2",
+    "immutable": "^4.0.0-rc.9",
     "js-logger": "^1.4.1",
     "lodash": "^4.17.10",
     "react": "^16.2.0",
