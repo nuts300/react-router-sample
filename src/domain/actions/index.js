@@ -9,34 +9,38 @@ export const UPDATE_POKEMON_DETAIL_FETCHING = 'UPDATE_POKEMON_DETAIL_FETCHING';
 export const UPDATE_POKEMON_LIST_PROCESS = 'UPDATE_POKEMON_LIST_PROCESS';
 export const UPDATE_POKEMON_DETAIL_PROCESS = 'UPDATE_POKEMON_DETAIL_PROCESS';
 
-type UpdatePokemonListProcess = {
+export type UpdatePokemonListProcess = {
   type: typeof UPDATE_POKEMON_LIST_PROCESS
 };
 
-type UpdatePokemonDetailProcess = {
+export type UpdatePokemonDetailProcess = {
   type: typeof UPDATE_POKEMON_DETAIL_PROCESS,
   name: string
 };
 
-type UpdatePokemonListAction = {
+export type UpdatePokemonListAction = {
   type: typeof UPDATE_POKEMON_LIST,
   list: Array<ItemProps>
 };
 
-type UpdatePokemonDetailAction = {
+export type UpdatePokemonDetailAction = {
   type: typeof UPDATE_POKEMON_DETAIL,
   pokemon: DetailItemProps
 };
 
-type UpdatePokemonListFetchingAction = {
+export type UpdatePokemonListFetchingAction = {
   type: typeof UPDATE_POKEMON_LIST_FETCHING,
   isFetching: boolean
 };
 
-type UpdatePokemonDetailFetchingAction = {
+export type UpdatePokemonDetailFetchingAction = {
   type: typeof UPDATE_POKEMON_DETAIL_FETCHING,
   isFetching: boolean
 };
+
+export type Action = UpdatePokemonListProcess | UpdatePokemonDetailProcess | UpdatePokemonListAction |
+                     UpdatePokemonDetailAction | UpdatePokemonListFetchingAction | UpdatePokemonDetailFetchingAction;
+
 
 export function updatePokemonListProcess(): UpdatePokemonListProcess {
   return {
