@@ -1,3 +1,4 @@
+// @flow
 import { combineReducers } from 'redux';
 
 import pokemonListReducer from 'domain/store/reducer/pokemon_list';

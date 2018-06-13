@@ -11,5 +11,5 @@ export type PokemonListProps = {
 }
 export const PokemonList = Record<PokemonListProps>({
   fetching: false,
-  list: new List()
+  list: List()
 });

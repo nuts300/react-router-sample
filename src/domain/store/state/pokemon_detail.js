@@ -19,7 +19,7 @@ export type DetailItemProps = {
   };
 };
 
-const Pokemon = Record<DetailItemProps>({
+export const Pokemon = Record<DetailItemProps>({
   name: '',
   height: 0,
   weight: 0,
