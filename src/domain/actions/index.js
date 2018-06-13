@@ -9,6 +9,15 @@ export const UPDATE_POKEMON_DETAIL_FETCHING = 'UPDATE_POKEMON_DETAIL_FETCHING';
 export const UPDATE_POKEMON_LIST_PROCESS = 'UPDATE_POKEMON_LIST_PROCESS';
 export const UPDATE_POKEMON_DETAIL_PROCESS = 'UPDATE_POKEMON_DETAIL_PROCESS';
 
+type UpdatePokemonListProcess = {
+  type: typeof UPDATE_POKEMON_LIST_PROCESS
+};
+
+type UpdatePokemonDetailProcess = {
+  type: typeof UPDATE_POKEMON_DETAIL_PROCESS,
+  name: string
+};
+
 type UpdatePokemonListAction = {
   type: typeof UPDATE_POKEMON_LIST,
   list: Array<ItemProps>
@@ -28,6 +37,19 @@ type UpdatePokemonDetailFetchingAction = {
   type: typeof UPDATE_POKEMON_DETAIL_FETCHING,
   isFetching: boolean
 };
+
+export function updatePokemonListProcess(): UpdatePokemonListProcess {
+  return {
+    type: UPDATE_POKEMON_LIST_PROCESS
+  };
+}
+
+export function updatepokemonDetailProcess(name: string): UpdatePokemonDetailProcess {
+  return {
+    type: UPDATE_POKEMON_DETAIL_PROCESS,
+    name
+  }
+} 
 
 export function updatePokemonListAction(list: Array<ItemProps>): UpdatePokemonListAction {
   return {
