@@ -1,4 +1,4 @@
-// @flow;
+// @flow
 import { Record } from 'immutable';
   
 export type DetailItemFromNetwork = {
@@ -37,5 +37,3 @@ export const PokemonDetail = Record<PokemonDetailProps>({
   fetching: false,
   pokemon: new Pokemon()
 });
-
-export const initialPokemonDetailState = new PokemonDetail();

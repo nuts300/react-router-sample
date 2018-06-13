@@ -1,25 +1,21 @@
 // @flow
-
-import { initialPokemonListState } from 'domain/store/state/pokemon_list';
-import { initialPokemonDetailState } from 'domain/store/state/pokemon_detail';
-import { fromJS } from 'immutable';
+import { Record } from 'immutable';
+import { PokemonList } from 'domain/store/state/pokemon_list';
+import { PokemonDetail } from 'domain/store/state/pokemon_detail';
 
 export type HomePage = { name: 'HOME_PAGE' };
-
 export type DetailPage = { name: 'DETAIL_PAGE' };
+export type PageProps = HomePage | DetailPage;
+export const Page = Record<PageProps>({ name: 'HOME_PAGE' });
 
-export type Page = HomePage | DetailPage;
-
-export type State = {
-  currentPage: Page;
-  allItems: Array<Item>;
-  filteredItems: Array<Item>;
-  detail: DetailItem;
-  shadowColor: string;
-  loading: boolean;
+export type StateProps = {
+  currentPage: Page,
+  pokemonList: PokemonList,
+  pokemonDetail: PokemonDetail
 };
 
-export const initialAppState = {
-    pokemonList: fromJS(initialPokemonListState),
-    pokemonDetail: fromJS(initialPokemonDetailState)
-};
+export const State = Record<StateProps>({
+  currentPage: new Page(),
+  pokemonList: new PokemonList(),
+  pokemonDetail: new PokemonDetail(),
+})

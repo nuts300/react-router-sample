@@ -13,5 +13,3 @@ export const PokemonList = Record<PokemonDetailProps>({
   fetching: false,
   list: new List()
 });
-
-export const initialPokemonListState = new PokemonList();
