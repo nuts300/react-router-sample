@@ -1,6 +1,6 @@
 // @flow
 import type { ItemProps } from 'domain/store/state/pokemon_list';
-import type { DetailItemFromNetwork } from 'domain/store/state/pokemon_detail';
+import type { DetailItemProps } from 'domain/store/state/pokemon_detail';
 
 import { getLogger } from 'logger';
 const logger = getLogger('domain/network/pokemon');
@@ -20,7 +20,7 @@ export async function getPokemonList(): Promise<Array<ItemProps>> {
     } else throw new TypeError('getList response is not Ok');
   }
   
-export async function getPokemonDetailByName(name: string): Promise<DetailItemFromNetwork> {
+export async function getPokemonDetailByName(name: string): Promise<DetailItemProps> {
     logger.debug('Requesting from network', '- element -', name);
     const resp = await fetch(`${URL_DETAIL}${name}`);
     if (resp.ok) {

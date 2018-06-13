@@ -13,7 +13,7 @@ function updatePokemonDetailFetching(state: PokemonDetail, isFetching: boolean):
     return state.set('fetching', isFetching);
 }
 
-export default function pokemonDetailReducer(state: PokemonDetail = new PokemonDetail(), action: Action) {
+export default function pokemonDetailReducer(state: PokemonDetail = new PokemonDetail(), action: Action): PokemonDetail {
     switch (action.type) {
         case UPDATE_POKEMON_DETAIL:
             return updatePokemonDetail(state, action.pokemon);

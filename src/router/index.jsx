@@ -1,6 +1,7 @@
+// @flow
+
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider, connect } from 'react-redux'
+import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import App from 'components/container/App';
@@ -20,8 +21,7 @@ function getHistory (store) {
     return history;
 }
 
-export default function RootRouter(store) {
-    const history = syncHistoryWithStore(browserHistory, store);
+export default function RootRouter(store: any) {
     return (
     <Provider store={store}>
       { /* Tell the Router to use our enhanced history */ }

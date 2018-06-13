@@ -1,7 +1,7 @@
 // @flow
 import { Record } from 'immutable';
-  
-export type DetailItemFromNetwork = {
+
+export type DetailItemProps = {
   name: string;
   height: number;
   weight: number;
@@ -10,21 +10,12 @@ export type DetailItemFromNetwork = {
   };
 };
 
-export type DetailItemProps = {
-  name: string;
-  height: number;
-  weight: number;
-  sprites: {
-      frontDefault: string;
-  };
-};
-
 export const Pokemon = Record<DetailItemProps>({
   name: '',
   height: 0,
   weight: 0,
   sprites: {
-    frontDefault: ''
+    front_default: ''
   }
 });
 
@@ -35,5 +26,5 @@ export type PokemonDetailProps = {
 
 export const PokemonDetail = Record<PokemonDetailProps>({
   fetching: false,
-  pokemon: new Pokemon()
+  pokemon: Pokemon()
 });

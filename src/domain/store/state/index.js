@@ -15,7 +15,7 @@ export type StateProps = {
 };
 
 export const State = Record<StateProps>({
-  currentPage: new Page(),
-  pokemonList: new PokemonList(),
-  pokemonDetail: new PokemonDetail(),
+  currentPage: Page(),
+  pokemonList: PokemonList(),
+  pokemonDetail: PokemonDetail(),
 })

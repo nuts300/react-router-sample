@@ -14,6 +14,6 @@ esproposal.class_static_fields=enable
 
 module.name_mapper='^domain\/\(.*\)$' -> '<PROJECT_ROOT>/src/domain/\1'
 module.name_mapper='^components\/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
-module.name_mapper='^router\/\(.*\)$' -> '<PROJECT_ROOT>/src/router/\1'
+module.name_mapper='^router$' -> '<PROJECT_ROOT>/src/router'
 module.name_mapper='^logger$' -> '<PROJECT_ROOT>/src/logger'
 module.name_mapper='^index$' -> '<PROJECT_ROOT>/src/index'

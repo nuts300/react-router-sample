@@ -15,7 +15,7 @@ function updatePokemonListFetching(state: PokemonList, isFetching: boolean): Pok
   return state.set('fetching', isFetching);
 }
 
-export default function pokemonListReducer(state: PokemonList = new PokemonList(), action: Action) {
+export default function pokemonListReducer(state: PokemonList = new PokemonList(), action: Action): PokemonList {
   switch (action.type) {
     case UPDATE_POKEMON_LIST:
       return updatePokemonList(state, action.list);
