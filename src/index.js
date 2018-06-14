@@ -10,7 +10,8 @@ import createSagaMiddleware from 'redux-saga';
 import reducer from 'domain/store/reducer';
 import RootRouter from 'router'
 import rootSaga from 'domain/middleware';
-import { State } from 'domain/store/state';
+import type { State } from 'domain/store/state';
+import { state } from 'domain/store/state';
 
 const reducers = {
 	app: reducer,
@@ -20,7 +21,7 @@ const reducers = {
 const sagaMiddleware = createSagaMiddleware();
 
 const initialState: { app: State } = {
-	app: State()
+	app: state
 };
 
 const store = initStore(reducers, initialState, composeWithDevTools(

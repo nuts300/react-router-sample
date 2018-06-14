@@ -1,9 +1,8 @@
 // @flow
-
+import type { State } from 'domain/store/state';
 import type { Action } from 'domain/actions';
 
 import { createStore, combineReducers } from 'redux';
-import { State } from 'domain/store/state';
 
 
 let store;

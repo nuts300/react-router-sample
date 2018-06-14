@@ -11,13 +11,13 @@ export type DetailPage = { name: 'DETAIL_PAGE' };
 export type PageProps = HomePage | DetailPage;
 export const Page = Record({ name: 'HOME_PAGE' });
 
-export type StateProps = {
+export type State = {
   currentPage: Page,
   pokemonList: PokemonList,
   pokemonDetail: PokemonDetail
 };
 
-export type StateRawProps = {
+export type StateProps = {
   currentPage: PageProps,
   pokemonList: {
     fetching: boolean,
@@ -29,8 +29,8 @@ export type StateRawProps = {
   }
 };
 
-export const State = Record({
+export const state = {
   currentPage: Page(),
   pokemonList: PokemonList(),
   pokemonDetail: PokemonDetail(),
-})
+}

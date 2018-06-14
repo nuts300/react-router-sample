@@ -1,11 +1,11 @@
 //@flow
-import type { StateRawProps } from 'domain/store/state';
+import type { StateProps } from 'domain/store/state';
 
 import * as React from 'react';
 import { connect } from 'react-redux';
 import toJS from 'components/utils/to_js'
 
-function PokemonDetail({ pokemonDetail }: StateRawProps) {
+function PokemonDetail({ pokemonDetail }: StateProps) {
     const pokemon = pokemonDetail.pokemon;
     const fetching = pokemonDetail.fetching;
     return (
