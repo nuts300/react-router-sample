@@ -1,4 +1,5 @@
 // @flow
+import type { StateProps } from 'domain/store/state';
 
 import * as React from 'react';
 import { connect } from 'react-redux';
@@ -7,7 +8,7 @@ import toJS from 'components/utils/to_js'
 import TableList from 'components/presentational/TableList';
 import PokemonItem from 'components/presentational/PokemonItem';
 
-function PokemonList({ pokemonList }: { pokemonList: { list: Array }}) {
+function PokemonList({ pokemonList }: StateProps) {
     return (
     <div>
         <h2>Pokemon List!!!</h2>
@@ -21,10 +22,10 @@ function mapState(state) {
       ...state.app,
     };
 }
-function mapDispatch(dispatch) {
+function mapDispatch(/* dispatch: Dispatch */) {
     return {
         actions: {} // user action
     };
-};
+}
 
 export default connect(mapState, mapDispatch)(toJS(PokemonList));

@@ -1,8 +1,9 @@
+// @flow
 import * as React from 'react';
 import { connect } from 'react-redux';
 import toJS from 'components/utils/to_js'
 
-function Login(props) {
+function Login() {
     return <h2>Login!!!</h2>
 }
 
@@ -11,11 +12,11 @@ function mapState(state) {
       ...state.app,
     };
 }
-function mapDispatch(dispatch) {
+function mapDispatch(/* dispatch */) {
     return {
         actions: {} // user action
     };
-};
+}
 
 export default connect(mapState, mapDispatch)(toJS(Login));
 
