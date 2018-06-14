@@ -10,7 +10,7 @@ export type DetailItemProps = {
   };
 };
 
-export const Pokemon = Record<DetailItemProps>({
+export const Pokemon = Record({
   name: '',
   height: 0,
   weight: 0,
@@ -24,7 +24,7 @@ export type PokemonDetailProps = {
   pokemon:  Pokemon
 };
 
-export const PokemonDetail = Record<PokemonDetailProps>({
+export const PokemonDetail = Record({
   fetching: false,
   pokemon: Pokemon()
 });

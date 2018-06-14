@@ -1,11 +1,11 @@
 //@flow
-import type { StateProps } from 'domain/store/state';
+import type { StateRawProps } from 'domain/store/state';
 
 import * as React from 'react';
 import { connect } from 'react-redux';
 import toJS from 'components/utils/to_js'
 
-function PokemonDetail({ pokemonDetail }: StateProps) {
+function PokemonDetail({ pokemonDetail }: StateRawProps) {
     const pokemon = pokemonDetail.pokemon;
     const fetching = pokemonDetail.fetching;
     return (
@@ -54,10 +54,10 @@ function mapState(state) {
       ...state.app,
     };
 }
-function mapDispatch(dispatch) {
+function mapDispatch(/* dispatch: Dispatch */) {
     return {
         actions: {} // user action
     };
-};
+}
 
 export default connect(mapState, mapDispatch)(toJS(PokemonDetail));
