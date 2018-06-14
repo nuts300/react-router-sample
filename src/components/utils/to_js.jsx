@@ -1,20 +1,23 @@
+// @flow
 import * as React from 'react';
-import { Iterable } from 'immutable';
+import { isImmutable } from 'immutable';
 
-export default function toJS(WrappedComponent) {
-    return (props) => {
+export default function toJS<T>(WrappedComponent: React.Component<T, any> | React.StatelessFunctionalComponent<T>) {
+    return (props: any): React.Node => {
         const KEY = 0;
         const VALUE = 1;
-        const propsJS = Object.entries(
+        // $FlowFixMe
+        const propsJS: T = Object.entries(
             props
         ).reduce((newProps, prop) => {
-            if (!Iterable.isIterable(prop[VALUE])) {
+            if (!isImmutable(prop[VALUE])) {
                 newProps[prop[KEY]] = prop[VALUE];
                 return newProps;
             }
             newProps[prop[KEY]] = prop[VALUE].toJS();
             return newProps
         }, {})
+        // $FlowFixMe
         return <WrappedComponent {...propsJS} />
     };
 }
