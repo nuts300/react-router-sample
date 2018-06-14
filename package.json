@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --content-base build --hot --inline",
-    "flow": "flow"
+    "flow": "flow",
+    "flow-typed": "flow-typed"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -24,6 +25,7 @@
     "eslint-plugin-react": "^7.9.1",
     "flow-bin": "^0.72.0",
     "flow-status-webpack-plugin": "^0.1.7",
+    "flow-typed": "^2.4.0",
     "flowtype": "^2.0.0",
     "jsxobj": "^1.1.0",
     "react-hot-loader": "^4.2.0",
